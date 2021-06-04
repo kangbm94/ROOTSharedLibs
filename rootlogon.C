@@ -1,4 +1,4 @@
-R__ADD_INCLUDE_PATH(/Users/MIN/ROOTSharedLibs);
+R__ADD_INCLUDE_PATH(~/ROOTSharedLibs);
 #include "CMatrix.hh"
 #include "Utilities.hh"
 void rootlogon()
