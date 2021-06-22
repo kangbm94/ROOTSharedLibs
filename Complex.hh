@@ -175,16 +175,16 @@ class Complex{
 			return ztmp;
 		}
 		Complex operator/(Complex z){
-/*
-			double r1=Abs();
-			double p1=Phase();
-			double r2=z.Abs();
-			double p2=z.Phase();
-			double r=r1/r2;
-			double p=p1-p2;
-			Complex ztmp;
-			ztmp.SetRPhi(r,p);
-			*/
+			/*
+				 double r1=Abs();
+				 double p1=Phase();
+				 double r2=z.Abs();
+				 double p2=z.Phase();
+				 double r=r1/r2;
+				 double p=p1-p2;
+				 Complex ztmp;
+				 ztmp.SetRPhi(r,p);
+				 */
 			Complex ztmp;
 			return ztmp;
 		}
@@ -231,6 +231,8 @@ class Complex{
 		Complex operator-=(double z){
 			return This()-z;	
 		}
+//		Complex Pow(Complex z1, Complex z2){
+//		}
 };
 //Operators
 Complex operator+(int a,Complex ztmp){
@@ -269,4 +271,22 @@ Complex CRPhy(double rad, double phi){
 	double i = rad*sin(phi);
 	return Complex(r,i);
 };
+
+/*
+	 Complex Q1(Complex a Comblex b, Complex c){
+
+	 }
+	 */
+
+
+
+
+
+
+
+
+
+
+
+
 #endif

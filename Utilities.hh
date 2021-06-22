@@ -13,7 +13,7 @@ void Indicator(int i, int ent, TString Loopname){
 	bool stat= i%tot;
 	if(i==0){
 		cout<<Loopname+" :"<<endl;
-}
+	}
 	if(!stat){
 		cout<<"\r"<<flush<<setw(2)<<"\r"<<i/tot<<" \%";
 	}
@@ -23,9 +23,9 @@ void Indicator(int i, int ent, TString Loopname){
 	}
 }
 void PressAnyKey(){	
-		gSystem->ProcessEvents();
-		cout<<"Press Enter to continue"<<endl;
-		cin.ignore();
+	gSystem->ProcessEvents();
+	cout<<"Press Enter to continue"<<endl;
+	cin.ignore();
 }
 void FillHist(TString title, TTree* tree,TString branch,TCut cut){
 	tree->Draw(branch+">>"+title,cut);
@@ -42,11 +42,10 @@ void ReadCSV(fstream& file, double* data){//
 	string line,token;
 	stringstream iss;
 	int cnt=0;
-		getline(file,line);
+	getline(file,line);
 	iss<<line;
 	while(getline(iss,token,',')){
 		data[cnt]=stod(token);
 		cnt++;
 	}
 }
-
