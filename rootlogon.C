@@ -1,11 +1,11 @@
-R__ADD_INCLUDE_PATH(~/ROOTSharedLibs);
-#include "CMatrix.hh"
-#include "Utilities.hh"
+//#include "CMatrix.hh"
+//#include "Utilities.hh"
 void rootlogon()
 {	
-
-
+	gSystem->AddIncludePath("/Users/MIN/ROOTSharedLibs/"	);
+//	cout<<"RootLogon"<<endl;
 	//ild TStyle
+
 	TStyle* ildStyle = new TStyle("ildStyle", "ILD Style");
 
 	//remove frame
@@ -15,15 +15,15 @@ void rootlogon()
 	ildStyle -> SetTitleBorderSize(0);
 
 	//use the primary color palette
-	ildStyle -> SetPalette(1,0);
+//	ildStyle -> SetPalette(1,0);
 
 	//margins
 	ildStyle -> SetPadTopMargin(0.13);
 	ildStyle -> SetPadRightMargin(0.15);
 	ildStyle -> SetPadLeftMargin(0.15);
 	ildStyle -> SetPadBottomMargin(0.12);
-	ildStyle -> SetCanvasColor(0);
-
+	ildStyle -> SetCanvasColor(1);
+/*
 	//fitting option
 	ildStyle -> SetFuncColor(kRed);
 	ildStyle -> SetFuncWidth(1);
@@ -31,7 +31,7 @@ void rootlogon()
 	//axis label
 	ildStyle -> SetLabelOffset(0.01,"xyz");
 	ildStyle -> SetLabelColor(kBlack,"xyz");
-	ildStyle -> SetLabelFont(62,"xyz");
+	ildStyle -> SetLabelFont(22,"xyz");
 	ildStyle -> SetLabelSize(0.05,"xyz");
 
 	//title
@@ -64,8 +64,15 @@ void rootlogon()
 	ildStyle -> SetPadTickX(1);
 	ildStyle -> SetPadTickY(1);
 	ildStyle -> SetMarkerSize(0.7);
-
 	ildStyle -> cd();
+*/
 	gStyle -> ls();
 	gStyle-> SetPalette(1);
+
+	//Fonts
+	gStyle->SetStatFont(22);
+//	gStyle->SetLabelFont(22);
+	gStyle->SetLegendFont(22);
+	gStyle->SetTitleFont(22);
+
 }

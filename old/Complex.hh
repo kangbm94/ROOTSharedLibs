@@ -9,7 +9,7 @@ class Complex{
 		double radious;
 		double phase;
 		void SetRadious(){
-			radious = SquareSum(real,radious);
+			radious = SquareSum(real,img);
 		}
 		void SetPhase(){
 			if(img<0){
@@ -76,9 +76,17 @@ class Complex{
 			return radious;
 		}
 		double Phase(){
+			radious = SquareSum(real,img);
+			if(img<0){
+				phase = 2*Pi()-acos(real/radious);
+			}
+			else{
+				phase = acos(real/radious);
+			}
 			return phase;
 		}
 		double Abs(){
+			radious = SquareSum(real,img);
 			return radious;//Same with Radious() function
 		}
 		Complex CRPhy(double rad, double phi){
@@ -175,17 +183,13 @@ class Complex{
 			return ztmp;
 		}
 		Complex operator/(Complex z){
-			/*
-				 double r1=Abs();
-				 double p1=Phase();
-				 double r2=z.Abs();
-				 double p2=z.Phase();
-				 double r=r1/r2;
-				 double p=p1-p2;
-				 Complex ztmp;
-				 ztmp.SetRPhi(r,p);
-				 */
-			Complex ztmp;
+			double r1=Abs();
+			double p1=Phase();
+			double r2=z.Abs();
+			double p2=z.Phase();
+			double r=r1/r2;
+			double p=p1-p2;
+			Complex ztmp(r*cos(p),r*sin(p));
 			return ztmp;
 		}
 
@@ -231,8 +235,8 @@ class Complex{
 		Complex operator-=(double z){
 			return This()-z;	
 		}
-//		Complex Pow(Complex z1, Complex z2){
-//		}
+		//		Complex Pow(Complex z1, Complex z2){
+		//		}
 };
 //Operators
 Complex operator+(int a,Complex ztmp){

@@ -130,4 +130,19 @@ double chebyshev(double x, int n){
 }
 
 
+
+void FunctionDigitize(TF1* func, int npar, double* par, double xmin, double xmax, double ){
+	double x =xmin+(xmax-xmin)*gRandom->Rndm();
+
+};
+
+
+
+
+
+
+
+
+
+
 #endif

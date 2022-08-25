@@ -3,7 +3,7 @@
 #include "Groups.hh"
 double PToBeta(double mom,double mass){
 	double val=sqrt(mass*mass+mom*mom);
-	return sqrt(mom/val);
+	return mom/val;
 }
 double BetaToP(double beta, double mass){
 	double val=1/sqrt(1-square(beta));
